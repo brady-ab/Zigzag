@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platform;
+    public GameObject Diamond;
+
     Vector3 lastPos;
     float size;
     public bool GameOver;
@@ -37,6 +39,7 @@ public class PlatformSpawner : MonoBehaviour
     
     }
 
+    //Uses a random number to spawn a platform in either the X or Z direction.
     void SpawnPlatforms()
     {
 
@@ -51,16 +54,26 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
+    //Spawns a platform one platform's length ahead of the last platform in the X direction.
     void SpawnX()
     {
         Vector3 pos = lastPos;
         pos.x += size;
         lastPos = pos;
         Instantiate(platform, pos, Quaternion.identity);
+
+        int rand = Random.Range(0, 4);
+        if (rand < 1) {
+            Instantiate(Diamond, new Vector3(pos.x, pos.y + 1, pos.z), Diamond.transform.rotation);
+        }
+        else
+        {
+            //
+        }
     }
 
     
-
+    //Same but Z
     void SpawnZ()
     {
         Vector3 pos = lastPos;
@@ -68,5 +81,14 @@ public class PlatformSpawner : MonoBehaviour
         lastPos = pos;
         Instantiate(platform, pos, Quaternion.identity);
 
+        int rand = Random.Range(0, 10);
+        if (rand < 1)
+        {
+            Instantiate(Diamond, new Vector3(pos.x, pos.y + 1, pos.z), Diamond.transform.rotation);
+        }
+        else
+        {
+            //
+        }
     }
 }

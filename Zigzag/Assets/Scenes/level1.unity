@@ -347,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 2413233257253119952, guid: a3abf3f999cf200478d6f49033569dc5, type: 3}
+  Diamond: {fileID: 4130254902062724335, guid: 34be88194ff746a4ba87b56b54fae835, type: 3}
   GameOver: 0
 --- !u!4 &186545840
 Transform:
@@ -490,7 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b6fbbdcd96bad4cbad6e9c22211ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  particle: {fileID: 458634503362180742, guid: 63d094db2fa5a6543a1fd7569f520429, type: 3}
+  speed: 6
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
